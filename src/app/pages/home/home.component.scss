@@ -1,5 +1,5 @@
 .aboutMe {
-  background: linear-gradient(90deg, #3d2dd2 67%, var(--title) 33%);
+  background: linear-gradient(90deg, var(--purple) 67%, var(--title) 33%);
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -9,7 +9,8 @@
   .content {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 6rem 8rem 0 8rem;
 
     article {
       display: flex;
@@ -18,7 +19,7 @@
 
       h1 {
         align-self: flex-start;
-        font-size: 3.5em;
+        font-size: 4.5em;
         color: var(--title);
       }
 
@@ -28,25 +29,36 @@
       }
     }
 
-    img {
-      width: 276px;
-      margin-right: calc(10em);
-      //position: relative;
-      //left: -45%;
-      //z-index: 2;
+    span {
+      width: 23rem;
+      height: 23rem;
+      border: 1px solid white;
+      position: relative;
+      right: 16rem;
+      z-index: 1;
+      overflow: visible;
+
+      img {
+        width: 23rem;
+        margin-right: 10rem;
+        position: relative;
+        left: -1rem;
+        top: -1rem;
+        z-index: 2;
+      }
     }
   }
 
   .description {
     margin-top: 5vh;
-    padding-left: 6em;
+    padding-left: 6rem;
     display: flex;
     flex-direction: row;
 
     p {
       font-size: .9rem;
       color: var(--subtitle);
-      padding-right: 6rem;
+      padding-right: 8rem;
       margin: 0 10px;
     }
   }
