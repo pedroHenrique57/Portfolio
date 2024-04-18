@@ -1,5 +1,11 @@
 h1 {
+  color: var(--title);
   font-size: 4.5em;
+}
+
+p {
+  color: var(--subtitle);
+  font-size: 1.2rem;
 }
 
 .aboutMe {
@@ -23,7 +29,6 @@ h1 {
 
       h1 {
         align-self: flex-start;
-        color: var(--title);
       }
 
       p {
@@ -75,21 +80,11 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  //column-gap: 45rem;
   background: var(--white);
   padding: 0 10rem;
 
   article {
     width: 40rem;
-
-    h1 {
-      color: var(--title);
-    }
-
-    p {
-      color: var(--subtitle);
-      font-size: 1.2rem;
-    }
   }
 
   &__leftArticle {
@@ -100,5 +95,27 @@ h1 {
   &__rightArticle {
     position: relative;
     top: 10rem;
+  }
+}
+
+.myHistory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10rem;
+  width: 100vw;
+  height: 100vh;
+  padding: 5rem 10rem;
+  word-spacing: 3px;
+background: var(--purple);
+
+  img {
+    width: 50%;
+    height: 80%;
+  }
+
+  p {
+    margin: 10px;
   }
 }
