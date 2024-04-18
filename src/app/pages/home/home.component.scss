@@ -1,3 +1,7 @@
+h1 {
+  font-size: 4.5em;
+}
+
 .aboutMe {
   background: linear-gradient(90deg, var(--purple) 67%, var(--title) 33%);
   width: 100vw;
@@ -19,7 +23,6 @@
 
       h1 {
         align-self: flex-start;
-        font-size: 4.5em;
         color: var(--title);
       }
 
@@ -49,7 +52,7 @@
     }
   }
 
-  .description {
+  .subContent {
     margin-top: 5vh;
     padding-left: 6rem;
     display: flex;
@@ -61,5 +64,41 @@
       padding-right: 8rem;
       margin: 0 10px;
     }
+  }
+}
+
+
+.description {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  //column-gap: 45rem;
+  background: var(--white);
+  padding: 0 10rem;
+
+  article {
+    width: 40rem;
+
+    h1 {
+      color: var(--title);
+    }
+
+    p {
+      color: var(--subtitle);
+      font-size: 1.2rem;
+    }
+  }
+
+  &__leftArticle {
+    position: relative;
+    top: -10rem;
+  }
+
+  &__rightArticle {
+    position: relative;
+    top: 10rem;
   }
 }
