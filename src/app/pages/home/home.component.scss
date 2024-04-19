@@ -151,10 +151,10 @@ p {
         font-size: 1.5rem;
       }
     }
+  }
 
-    &__leftCard {
-      border-right: 1px solid var(--purple);
-    }
+  &__leftCard {
+    border-right: 1px solid var(--purple);
   }
 
   &__button {
