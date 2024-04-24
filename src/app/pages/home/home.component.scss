@@ -1,3 +1,5 @@
+// styles Globals
+
 h1 {
   color: var(--title);
   font-size: 4.5em;
@@ -8,19 +10,90 @@ p {
   font-size: 1.2rem;
 }
 
+svg {
+  width: 4rem;
+  height: 2rem;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  background: var(--white-background);
+}
+
+.button__default {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid var(--title);
+}
+
+.button_animation {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 1.5rem;
+  width: 100%;
+  min-width: 24rem;
+  padding: 0.7rem 1rem;
+  background-color: transparent;
+  z-index: 1;
+  font-weight: bold;
+
+  a {
+    color: var(--title);
+    background-color: transparent;
+    display: inherit;
+    align-items: center;
+    column-gap: 1.3rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-101%);
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      background: var(--title);
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--white-background);
+
+      svg {
+        line {
+          stroke: var(--white-background);
+        }
+      }
+      &::before {
+        transform: translateX(0);
+        transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+    }
+  }
+}
+
+// styles Specificness
+
 .aboutMe {
   background: linear-gradient(90deg, var(--purple) 67%, var(--title) 33%);
-  width: 100vw;
+  height: auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-bottom: 5vh;
+  padding: 6rem 8rem;
 
   &__content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 6rem 8rem 0 8rem;
+
 
     article {
       display: flex;
@@ -41,9 +114,9 @@ p {
       width: 23rem;
       height: 23rem;
       border: 1px solid white;
-      position: relative;
       right: 16rem;
       z-index: 1;
+      position: relative;
       overflow: visible;
 
       img {
@@ -72,15 +145,11 @@ p {
   }
 }
 
-
 .description {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: var(--white);
   padding: 0 10rem;
 
   article {
@@ -104,32 +173,34 @@ p {
   justify-content: space-between;
   align-items: center;
   column-gap: 10rem;
-  width: 100vw;
-  height: 100vh;
-  padding: 5rem 10rem;
+  padding: 0 10rem;
   word-spacing: 3px;
   background: var(--purple);
 
+  article {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
   img {
-    width: 50%;
-    height: 80%;
+    width: 25rem;
   }
 
   p {
     margin: 10px;
+    font-size: 1rem;
   }
 }
 
 .whatIDo {
-  width: 100vw;
-  height: 100vh;
-  background: var(--white);
+  background: var(--white-background);
   display: flex;
   justify-content: center;
   align-items: center;
 
   .contentBox {
-    width: 80vw;
+    width: 80%;
     background: var(--white-hud);
     display: flex;
     flex-direction: row;
@@ -137,17 +208,14 @@ p {
 
     div {
       padding: 7rem;
-
-      * {
-        font-weight: bold;
-      }
+      font-weight: bold;
 
       h1 {
         font-size: 3.5rem;
       }
 
       p {
-        margin: 1rem 0;
+        margin: 1rem 0 2rem 0;
         font-size: 1.5rem;
       }
     }
@@ -155,63 +223,5 @@ p {
 
   &__leftCard {
     border-right: 1px solid var(--purple);
-  }
-
-  &__button {
-    position: absolute;
-    overflow: hidden;
-    border: 1px solid var(--title);
-
-    a {
-      display: flex;
-      position: relative;
-      flex-direction: row;
-      justify-content: center;
-      column-gap: 1.3rem;
-      align-items: center;
-      text-align: center;
-      font-size: 1.5rem;
-      width: 100%;
-      min-width: 24rem;
-      color: var(--title);
-      padding: 0.7rem 1rem;
-      background-color: transparent;
-      z-index: 1;
-      font-weight: bold;
-
-      svg {
-        width: 4rem;
-        height: 2rem;
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        transform: translateX(-101%);
-        background: var(--title);
-      }
-
-      &:hover {
-        color: var(--white);
-
-        svg {
-          line {
-            stroke: var(--white);
-          }
-        }
-
-        &::before {
-          transform: translateX(0%);
-          transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-      }
-    }
   }
 }
