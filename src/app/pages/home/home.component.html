@@ -53,14 +53,15 @@
 </section>
 
 <section class="whatIDo">
-  <div class="contentBox">
+  <div class="container">
     <div class="whatIDo__leftCard">
       <article>
         <h1>Lorem ipsum dolor sit amet.</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, saepe?</p>
       </article>
       <span class="button__default button_animation">
-        <a>See My Work
+        <div class="button__div">
+          <a>See My Work</a>
           <svg id="eVXFKAm70BC1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                viewBox="0 0 72 22" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
           <line x1="-36" y1="0" x2="36" y2="0" transform="matrix(.990068 0 0 1 35.595162 10.958431)" fill="none"
@@ -70,7 +71,7 @@
           <line x1="8.821303" y1="5.5" x2="-8.821303" y2="-5.5"
                 transform="matrix(.460519-.88765 0.88765 0.460519 63.057621 16.255801)" fill="none"
                 stroke="#f45d01"/></svg>
-        </a>
+        </div>
       </span>
     </div>
     <div>
@@ -79,7 +80,8 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, saepe?</p>
       </article>
       <span class="button__default button_animation">
-        <a>See My Work
+        <div class="button__div">
+          <a>See My Work</a>
           <svg id="eVXFKAm70BC1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                viewBox="0 0 72 22" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
           <line x1="-36" y1="0" x2="36" y2="0" transform="matrix(.990068 0 0 1 35.595162 10.958431)" fill="none"
@@ -89,10 +91,54 @@
           <line x1="8.821303" y1="5.5" x2="-8.821303" y2="-5.5"
                 transform="matrix(.460519-.88765 0.88765 0.460519 63.057621 16.255801)" fill="none"
                 stroke="#f45d01"/></svg>
-        </a>
+        </div>
       </span>
     </div>
   </div>
 </section>
 
-<section class="contactMe"></section>
+<section class="contactMe">
+  <div class="container">
+    <article>
+      <h1>Me mande uma mensagem</h1>
+      <p>Entre em contato comigo por favor quero emprego =)</p>
+    </article>
+
+    <form action="" method="post">
+      <div class="line">
+        <div>
+          <label for="name">Seu Nome</label>
+          <input id="name" placeholder="Seu Nominho aqui">
+        </div>
+        <div>
+          <label for="email">Endereço de E-Mail</label>
+          <input id="email" placeholder="Seu E-mail emeiástico">
+        </div>
+      </div>
+      <div class="line">
+        <div>
+          <label for="message">Sua Mensagem</label>
+          <textarea name="" id="message" cols="30" rows="10" placeholder="Sua Mensagem muito fofa iti malia, contrata noiz vai? se contrata? se vai contratar né? vai seu bobo, contrata noiz."></textarea>
+        </div>
+      </div>
+    </form>
+
+    <button class="button__default button_animation">
+      <div class="button__div">
+        See My Work
+        <svg id="eVXFKAm70BC1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             viewBox="0 0 72 22" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+          <line x1="-36" y1="0" x2="36" y2="0"
+                transform="matrix(.990068 0 0 1 35.595162 10.958431)" fill="none"
+                stroke="#f45d01"/>
+          <line x1="8.821303" y1="5.5" x2="-8.821303" y2="-5.5"
+                transform="matrix(.999829-.018494 0.018494 0.999829 63.080565 5.66408)" fill="none"
+                stroke="#f45d01"/>
+          <line x1="8.821303" y1="5.5" x2="-8.821303" y2="-5.5"
+                transform="matrix(.460519-.88765 0.88765 0.460519 63.057621 16.255801)" fill="none"
+                stroke="#f45d01"/>
+        </svg>
+      </div>
+    </button>
+  </div>
+</section>
