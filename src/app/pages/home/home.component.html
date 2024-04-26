@@ -104,26 +104,46 @@
       <p>Entre em contato comigo por favor quero emprego =)</p>
     </article>
 
-    <form action="" method="post">
+    <form name="emailFormId" [formGroup]="emailForm" (ngSubmit)="sendEmail($event)">
       <div class="line">
         <div>
-          <label for="name">Seu Nome</label>
-          <input id="name" placeholder="Seu Nominho aqui">
+          <label for="name" [ngClass]="{'inputFocus': isNameInputFocusStyle}">Seu Nome</label>
+          <input id="name"
+                 placeholder="Seu Nominho aqui"
+                 required
+                 type="text"
+                 (focus)="isNameInputFocusStyle = true"
+                 (focusout)="isNameInputFocusStyle = false"
+                 formControlName="name">
         </div>
         <div>
-          <label for="email">Endereço de E-Mail</label>
-          <input id="email" placeholder="Seu E-mail emeiástico">
+          <label for="email" class="" [ngClass]="{'inputFocus': isEmailInputFocusStyle}">Endereço de E-Mail</label>
+          <input id="email"
+                 placeholder="Seu E-mail emeiástico"
+                 required
+                 type="email"
+                 (focus)="isEmailInputFocusStyle = true"
+                 (focusout)="isEmailInputFocusStyle = false"
+                 formControlName="email">
         </div>
       </div>
       <div class="line">
         <div>
-          <label for="message">Sua Mensagem</label>
-          <textarea name="" id="message" cols="30" rows="10" placeholder="Sua Mensagem muito fofa iti malia, contrata noiz vai? se contrata? se vai contratar né? vai seu bobo, contrata noiz."></textarea>
+          <label for="message" [ngClass]="{'inputFocus': isTextareaInputFocusStyle}">Sua Mensagem</label>
+          <textarea id="message"
+                    cols="30"
+                    rows="10"
+                    required
+                    type="text"
+                    placeholder="Sua Mensagem muito fofa iti malia, contrata noiz vai? se contrata? se vai contratar né? vai seu bobo, contrata noiz."
+                    minlength="15"
+                    (focus)="isTextareaInputFocusStyle = true"
+                    (focusout)="isTextareaInputFocusStyle = false"
+                    formControlName="message"></textarea>
         </div>
       </div>
-    </form>
 
-    <button class="button__default button_animation">
+    <button class="button__default button_animation" type="submit">
       <div class="button__div">
         See My Work
         <svg id="eVXFKAm70BC1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -140,5 +160,6 @@
         </svg>
       </div>
     </button>
+    </form>
   </div>
 </section>

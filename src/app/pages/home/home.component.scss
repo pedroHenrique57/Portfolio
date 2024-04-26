@@ -275,8 +275,17 @@ section {
       margin-bottom: 7vw;
       width: 70%;
 
+      button {
+        align-self: center;
+      }
+
+      .inputFocus {
+        font-weight: 500;
+        filter: contrast(200%);
+        transition: filter 3s cubic-bezier(0.23, 1, 0.32, 1), font-weight 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
       label {
-        font-weight: inherit;
         font-size: 1.8rem;
         margin-bottom: 1rem;
         color: var(--title);
@@ -297,6 +306,7 @@ section {
         &::placeholder {
           font-size: 1.5rem;
           color: var(--title);
+          filter: grayscale(0.5);
         }
       }
     }
