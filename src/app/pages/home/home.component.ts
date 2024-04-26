@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {NgClass, NgIf} from '@angular/common';
 import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormControl} from '@angular/forms';
-import {EmailTemplateForm} from './email-template-form';
 
 @Component({
   selector: 'app-home',
@@ -29,9 +28,9 @@ export class HomeComponent {
   sendEmail(event: Event) {
     if (this.emailForm.valid) {
       this.emailFormToRecord = {
-        name: this.emailForm.get('name')?.value,
-        email: this.emailForm.get('email')?.value,
-        message: this.emailForm.get('message')?.value
+        name: this.emailForm.value.name,
+        email: this.emailForm.value.email,
+        message: this.emailForm.value.message
       };
 
       event.preventDefault();
@@ -49,8 +48,7 @@ export class HomeComponent {
         );
     } else {
       event.preventDefault();
-      // @ts-ignore
-      document.forms['emailFormId'].reportValidity();
+      document.forms[0].reportValidity();
     }
   }
 }
