@@ -17,7 +17,6 @@ export class HomeComponent {
   emailFormToRecord!: Record<string, string>;
   emailForm: FormGroup;
   pagesSections: string[] = ['aboutMe', 'description', 'myHistory', 'whatIDo', 'contactMe'];
-  mouseRoll?: number;
   pageSectionsIndexCount: number = 0;
 
   constructor(private formBuilder: FormBuilder) {
@@ -58,40 +57,16 @@ export class HomeComponent {
   @HostListener('wheel', ['$event'])
   rollWheel(event: WheelEvent) {
     event.preventDefault();
-    this.mouseRoll = Math.sign(event.deltaY);
+    const deltaYSign = Math.sign(event.deltaY);
+    const maxSectionsIndex = this.pagesSections.length - 1;
 
-    switch (this.mouseRoll) {
-      case -1:
-        if (this.pageSectionsIndexCount > 0) {
-          this.pageSectionsIndexCount--;
-          // @ts-ignore
-          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
-            behavior: 'smooth',
-          });
-          break;
-        } else {
-          // @ts-ignore
-          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
-            behavior: 'smooth',
-          });
-          break;
-        }
+    let newIndex = this.pageSectionsIndexCount + deltaYSign;
+    newIndex = Math.max(0, Math.min(maxSectionsIndex, newIndex));
 
-      case 1:
-        if (this.pageSectionsIndexCount < 4) {
-          this.pageSectionsIndexCount++;
-          // @ts-ignore
-          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
-            behavior: 'smooth',
-          });
-          break;
-        } else {
-          // @ts-ignore
-          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
-            behavior: 'smooth',
-          });
-          break;
-        }
-    }
+    const targetSectionId = this.pagesSections[newIndex];
+    const targetElement = document.getElementById(targetSectionId);
+
+    targetElement?.scrollIntoView({behavior: 'smooth'});
+    this.pageSectionsIndexCount = newIndex;
   }
 }
