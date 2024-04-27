@@ -63,11 +63,11 @@ export class HomeComponent {
     switch (this.mouseRoll) {
       case -1:
         if (this.pageSectionsIndexCount > 0) {
+          this.pageSectionsIndexCount--;
           // @ts-ignore
           document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
             behavior: 'smooth',
           });
-          this.pageSectionsIndexCount--;
           break;
         } else {
           // @ts-ignore
@@ -79,11 +79,11 @@ export class HomeComponent {
 
       case 1:
         if (this.pageSectionsIndexCount < 4) {
+          this.pageSectionsIndexCount++;
           // @ts-ignore
           document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
             behavior: 'smooth',
           });
-          this.pageSectionsIndexCount++;
           break;
         } else {
           // @ts-ignore
