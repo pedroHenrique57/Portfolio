@@ -17,6 +17,7 @@ svg {
 
 section {
   height: 100vh;
+  width: 100vw;
   background: var(--white-background);
 }
 
@@ -85,7 +86,7 @@ section {
 }
 
 .container {
-  width: 80%;
+  width: 75%;
   background: var(--white-hud);
   display: flex;
 }
@@ -93,8 +94,9 @@ section {
 // styles Specificness
 
 .aboutMe {
-  background: linear-gradient(90deg, var(--purple) 67%, var(--title) 33%);
+  background: linear-gradient(90deg, var(--complementary-color) 67%, var(--title) 33%);
   height: auto;
+  width: inherit;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -116,13 +118,14 @@ section {
 
       p {
         margin: 10px;
+        font-size: 2rem;
         color: white;
       }
     }
 
     span {
-      width: 23rem;
-      height: 23rem;
+      width: 23vw;
+      height: 23vw;
       border: 1px solid white;
       right: 16rem;
       z-index: 1;
@@ -130,7 +133,7 @@ section {
       overflow: visible;
 
       img {
-        width: 23rem;
+        width: 23vw;
         position: relative;
         left: -1rem;
         top: -1rem;
@@ -146,16 +149,18 @@ section {
     flex-direction: row;
 
     p {
-      font-size: .9rem;
+      font-size: 1.3rem;
       color: var(--subtitle);
-      padding-right: 8rem;
+      padding-right: 5rem;
       margin: 0 10px;
+      filter: contrast(14);
     }
   }
 }
 
 .description {
   display: flex;
+  width: inherit;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -179,12 +184,13 @@ section {
 .myHistory {
   display: flex;
   flex-direction: row;
+  width: inherit;
   justify-content: space-between;
   align-items: center;
   column-gap: 10rem;
   padding: 0 10rem;
   word-spacing: 3px;
-  background: var(--purple);
+  background: var(--complementary-color);
 
   article {
     display: flex;
@@ -199,23 +205,28 @@ section {
   p {
     margin: 10px;
     font-size: 1rem;
+    filter: contrast(13);
   }
 }
 
 .whatIDo {
   background: var(--white-background);
   display: flex;
+  width: inherit;
   justify-content: center;
   align-items: center;
 
   .container {
-
     div {
-      padding: 7rem;
       font-weight: bold;
+      padding: 6rem;
 
       .button__div {
         padding: 0;
+
+        a {
+          font-size: 1.4rem;
+        }
       }
 
       h1 {
@@ -230,90 +241,98 @@ section {
   }
 
   &__leftCard {
-    border-right: 1px solid var(--purple);
+    border-right: 1px solid var(--complementary-color);
   }
 }
 
 .contactMe {
-  .container {
-    width: 100%;
-    height: 100%;
+  display: flex;
+  width: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+
+  .line {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
+    flex-direction: row;
 
-    .line {
-      display: flex;
-      flex-direction: row;
-
-      div {
-        display: flex;
-        flex-direction: column;
-        margin-right: 5rem;
-        width: 100%;
-      }
-    }
-
-    article {
-      font-weight: bold;
-      text-align: center;
-      padding-bottom: 7vw;
-
-      p {
-        padding-top: 2rem;
-        font-weight: 400;
-        font-size: 2rem;
-      }
-    }
-
-    form {
+    div {
       display: flex;
       flex-direction: column;
-      row-gap: 5rem;
-      margin-bottom: 7vw;
-      width: 70%;
+      margin-right: 5rem;
+      width: 100%;
+    }
+  }
 
-      button {
-        align-self: center;
+  article {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 4rem;
+
+    p {
+      padding-top: 1rem;
+      font-weight: 400;
+      font-size: 2rem;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+    width: 70%;
+
+    button {
+      align-self: center;
+    }
+
+    .inputFocus {
+      font-weight: 500;
+      filter: contrast(200%);
+      transition: filter 3s cubic-bezier(0.23, 1, 0.32, 1), font-weight 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    label {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--title);
+    }
+
+    input, textarea {
+      font-size: 2rem;
+      font-weight: inherit;
+      border: none;
+      border-bottom: var(--title) solid 1px;
+      max-height: 6rem;
+      resize: none;
+
+      &:focus {
+        outline: none;
       }
 
-      .inputFocus {
-        font-weight: 500;
-        filter: contrast(200%);
-        transition: filter 3s cubic-bezier(0.23, 1, 0.32, 1), font-weight 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-
-      label {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
+      &::placeholder {
+        font-size: 1.5rem;
         color: var(--title);
-      }
-
-      input, textarea {
-        font-size: 2rem;
-        font-weight: inherit;
-        border: none;
-        border-bottom: var(--title) solid 1px;
-        max-height: 6rem;
-        resize: none;
-
-        &:focus {
-          outline: none;
-        }
-
-        &::placeholder {
-          font-size: 1.5rem;
-          color: var(--title);
-          filter: grayscale(0.5);
-        }
+        filter: grayscale(0.5);
       }
     }
+  }
 
-    .button__div {
-      height: 3rem;
-      font-size: 1.4rem;
-    }
+  .button__div {
+    height: 3rem;
+    font-size: 1.4rem;
+  }
+}
+
+// Media Query
+
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 3.5em;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }
