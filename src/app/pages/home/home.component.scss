@@ -127,7 +127,7 @@ section {
       width: 23vw;
       height: 23vw;
       border: 1px solid white;
-      right: 16rem;
+      right: 13rem;
       z-index: 1;
       position: relative;
       overflow: visible;
@@ -252,6 +252,7 @@ section {
   justify-content: center;
   align-items: center;
   font-weight: 300;
+  background-color: var(--white-hud);
 
   .line {
     display: flex;

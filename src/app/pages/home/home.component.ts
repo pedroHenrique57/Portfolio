@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {NgClass, NgIf} from '@angular/common';
 import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormControl} from '@angular/forms';
@@ -16,6 +16,9 @@ export class HomeComponent {
   isTextareaInputFocusStyle: boolean = false;
   emailFormToRecord!: Record<string, string>;
   emailForm: FormGroup;
+  pagesSections: string[] = ['aboutMe', 'description', 'myHistory', 'whatIDo', 'contactMe'];
+  mouseRoll?: number;
+  pageSectionsIndexCount: number = 0;
 
   constructor(private formBuilder: FormBuilder) {
     this.emailForm = this.formBuilder.group({
@@ -35,7 +38,7 @@ export class HomeComponent {
 
       event.preventDefault();
       emailjs
-        .send('Port', 'Port Template', this.emailFormToRecord , {
+        .send('Port', 'Port Template', this.emailFormToRecord, {
           publicKey: 'UFXabJfHrWlHmvomG',
         })
         .then(
@@ -49,6 +52,46 @@ export class HomeComponent {
     } else {
       event.preventDefault();
       document.forms[0].reportValidity();
+    }
+  }
+
+  @HostListener('wheel', ['$event'])
+  rollWheel(event: WheelEvent) {
+    event.preventDefault();
+    this.mouseRoll = Math.sign(event.deltaY);
+
+    switch (this.mouseRoll) {
+      case -1:
+        if (this.pageSectionsIndexCount > 0) {
+          // @ts-ignore
+          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
+            behavior: 'smooth',
+          });
+          this.pageSectionsIndexCount--;
+          break;
+        } else {
+          // @ts-ignore
+          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
+            behavior: 'smooth',
+          });
+          break;
+        }
+
+      case 1:
+        if (this.pageSectionsIndexCount < 4) {
+          // @ts-ignore
+          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
+            behavior: 'smooth',
+          });
+          this.pageSectionsIndexCount++;
+          break;
+        } else {
+          // @ts-ignore
+          document.getElementById(this.pagesSections[this.pageSectionsIndexCount]).scrollIntoView({
+            behavior: 'smooth',
+          });
+          break;
+        }
     }
   }
 }
