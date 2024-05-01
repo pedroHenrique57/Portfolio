@@ -20,13 +20,11 @@ section {
   border: 1px solid var(--title);
 }
 
-.button_animation {
+.button__animation {
   display: flex;
   position: relative;
   flex-direction: row;
   justify-content: center;
-  font-size: 1.5rem;
-  min-width: 24rem;
   padding: 0.7rem 1rem;
   background-color: transparent;
   z-index: 1;
@@ -85,11 +83,13 @@ section {
 }
 
 .aboutMe {
-  background: linear-gradient(90deg, var(--complementary-color) 67%, var(--title) 33%);
-
   &__content {
     p {
       color: white;
+    }
+
+    span {
+      backdrop-filter: grayscale(0.4);
     }
   }
 
@@ -118,10 +118,6 @@ section {
     div {
       font-weight: bold;
     }
-  }
-
-  &__leftCard {
-    border-right: 1px solid var(--complementary-color);
   }
 }
 
@@ -170,6 +166,208 @@ section {
 
 @media (max-width: 500px) {
 
+  h1 {
+    font-size: 3.5em;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  svg {
+    width: 3.7rem;
+    height: 1.5rem;
+  }
+
+  .aboutMe {
+    background: linear-gradient(180deg, var(--complementary-color) 50%, var(--title) 50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+
+    &__content {
+      height: 192px;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        border: 1px solid white;
+        width: 20rem;
+        bottom: -18rem;
+        left: 1rem;
+        z-index: 1;
+        position: relative;
+        overflow: visible;
+
+        img {
+          width: inherit;
+          position: relative;
+          left: -1rem;
+          top: -1rem;
+          z-index: 2;
+        }
+      }
+
+      article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+          align-self: flex-start;
+        }
+
+        p {
+          margin: 10px;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &__subContent {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      p {
+        font-size: 1.3rem;
+        margin: 2rem 10px 0 10px;
+      }
+    }
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    h1, p {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .myHistory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 1.5rem;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+    }
+
+    img {
+      margin-top: 1rem;
+      width: 25rem;
+    }
+
+    p {
+      margin: 10px;
+      font-size: 1rem;
+    }
+  }
+
+  .whatIDo {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: inherit;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+      width: 90%;
+
+      div {
+        padding: 3rem;
+
+        .button__div {
+          padding: 0;
+
+          a {
+            font-size: 1rem;
+          }
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          margin: 1rem 0 2rem 0;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &__leftCard {
+      border-bottom: 1px solid var(--complementary-color);
+    }
+  }
+
+  .contactMe {
+    display: flex;
+    width: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .line {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5rem;
+        width: 100%;
+      }
+    }
+
+    article {
+      padding-bottom: 4rem;
+
+      p {
+        padding-top: 1rem;
+        font-size: 2rem;
+      }
+    }
+
+    form {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 5rem;
+
+      label {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      input, textarea {
+        font-size: 2rem;
+        font-weight: inherit;
+        max-height: 6rem;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .button__div {
+      font-size: 1rem;
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -196,6 +394,7 @@ section {
   }
 
   .aboutMe {
+    background: linear-gradient(90deg, var(--complementary-color) 67%, var(--title) 33%);
     height: auto;
     width: inherit;
     display: flex;
@@ -329,6 +528,10 @@ section {
           font-size: 1.5rem;
         }
       }
+    }
+
+    &__leftCard {
+      border-right: 1px solid var(--complementary-color);
     }
   }
 
