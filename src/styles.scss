@@ -20,3 +20,9 @@
     font-size: 1vw;
   }
 }
+
+@media (max-width: 580px) {
+  html {
+    font-size: 2vh;
+  }
+}

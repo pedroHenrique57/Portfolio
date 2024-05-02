@@ -194,7 +194,7 @@ section {
       span {
         border: 1px solid white;
         width: 18rem;
-        bottom: -11rem;
+        bottom: -27vh;
         left: 1rem;
         z-index: 1;
         position: relative;
@@ -263,7 +263,7 @@ section {
 
     img {
       margin-top: 1rem;
-      width: 25rem;
+      width: 90vw;
     }
 
     p {
@@ -275,8 +275,9 @@ section {
   .whatIDo {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem 1rem;
     width: inherit;
+    height: auto;
     justify-content: center;
     align-items: center;
 
@@ -284,7 +285,7 @@ section {
       width: 90%;
 
       div {
-        padding: 3rem;
+        padding: 2rem;
 
         .button__div {
           padding: 0;
@@ -332,10 +333,15 @@ section {
 
     article {
       padding-top: 1rem;
+      width: 95%;
+
+      h1 {
+        font-size: 3rem;
+      }
 
       p {
-        padding-top: 1rem;
-        font-size: 2rem;
+        padding-top: 2rem;
+        font-size: 1rem;
       }
     }
 
@@ -344,7 +350,7 @@ section {
       display: flex;
       flex-direction: column;
       row-gap: 1rem;
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
 
       label {
         font-size: 1.4rem;
