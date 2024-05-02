@@ -15,14 +15,8 @@
   font-family: 'SF UI Text', sans-serif;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 581px) {
   html {
     font-size: 1vw;
   }
-
-  body {
-    overflow: hidden;
-  }
 }
-
-

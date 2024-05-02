@@ -164,7 +164,7 @@ section {
 
 // Media Query (display specific config like justify content, content align, etc.)
 
-@media (max-width: 500px) {
+@media (max-width: 580px) {
 
   h1 {
     font-size: 3.5em;
@@ -193,8 +193,8 @@ section {
 
       span {
         border: 1px solid white;
-        width: 20rem;
-        bottom: -18rem;
+        width: 18rem;
+        bottom: -11rem;
         left: 1rem;
         z-index: 1;
         position: relative;
@@ -314,7 +314,7 @@ section {
     display: flex;
     width: inherit;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     .line {
@@ -325,12 +325,13 @@ section {
         display: flex;
         flex-direction: column;
         margin-right: 5rem;
+        margin-top: 3rem;
         width: 100%;
       }
     }
 
     article {
-      padding-bottom: 4rem;
+      padding-top: 1rem;
 
       p {
         padding-top: 1rem;
@@ -339,18 +340,19 @@ section {
     }
 
     form {
-      width: 70%;
+      width: 90%;
       display: flex;
       flex-direction: column;
-      row-gap: 5rem;
+      row-gap: 1rem;
+      padding-bottom: 2rem;
 
       label {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         margin-bottom: 1rem;
       }
 
       input, textarea {
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: inherit;
         max-height: 6rem;
 
@@ -359,7 +361,7 @@ section {
         }
 
         &::placeholder {
-          font-size: 1.5rem;
+          font-size: 1rem;
         }
       }
     }
@@ -370,11 +372,7 @@ section {
   }
 }
 
-@media (max-width: 600px) {
-
-}
-
-@media (min-width: 700px) {
+@media (min-width: 581px) {
 
   h1 {
     font-size: 4.5em;
