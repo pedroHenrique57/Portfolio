@@ -28,6 +28,7 @@ export class HomeComponent {
   }
 
   sendEmail(event: Event) {
+    event.preventDefault();
     if (this.emailForm.valid) {
       this.emailFormToRecord = {
         name: this.emailForm.value.name,
@@ -35,7 +36,6 @@ export class HomeComponent {
         message: this.emailForm.value.message
       };
 
-      event.preventDefault();
       emailjs
         .send('Port', 'Port Template', this.emailFormToRecord, {
           publicKey: 'UFXabJfHrWlHmvomG',
@@ -49,7 +49,6 @@ export class HomeComponent {
           },
         );
     } else {
-      event.preventDefault();
       document.forms[0].reportValidity();
     }
   }
